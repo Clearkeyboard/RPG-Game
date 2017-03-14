@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Initial D!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar" id="border"></div>
+<div class="col-md-6 col-md-offset-3 vertical-center" id="wrapper">
+<H1 id="toptitle"><bold><center>Initial D!</h1>
+<p class="text-center" id="charSelect">
+    <div class="col-lg-3 center-text car" id="trueno">
+        <p class="text-center" id="carName">Trueno</p>
+        <img  class="center-block" src="assets/img/trueno.jpg" height="75" width="97.5">
+        <p class="text-center carHP" id="truenoHP">100</p>
+    </div>
+    <div class="col-lg-3 car" id="rxfd">
+            <p class="text-center" id="carName">RX-7 FD</p>
+            <img  class="center-block" src="assets/img/RX-7FD.jpg" height="75" width="97.5">
+            <p class="text-center carHP" id="RXFDHP">180</p>
+    </div>
+    <div class="col-lg-3 car" id="civic">
+         <p class="text-center" id="carName">Civic</p>
+        <img  class="center-block" src="assets/img/civic.jpg" height="75" width="97.5">
+         <p class="text-center carHP" id="civHP">125</p>
+    </div>
+    <div class="col-lg-3 car" id="rx7">
+            <p class="text-center" id="carName">RX-7</p>
+            <img  class="center-block" src="assets/img/RX-7.jpg" height="75" width="97.5">
+            <p class="text-center carHP" id="rx7HP">150</p>
+     </div>
+
+</p>
+<h2 class="col-lg-12 text-center">Your Car</h2>
+<h3 class="text-center col-lg-12" id="selectedCar"></h3>
+<h3 class="text-center col-lg-12">Enemies Available To Attack</h3>
+<h3 class="text-center" id="enemySpace"></h3>
+<h3 class="text-center col-lg-12">Fight Section</h3>
+<h4 class="col-lg-12 text-center" id="output"></h4>
+<h4 class="col-lg-12 text-center" id="counter"></h4>
+<div class="col-lg-12 text-center" id='fight'><button  class="col-lg-2-offset-6 center" id="fight" name="fight" type="button">Drift!</button></div>
+<h1 class="text-center col-lg-12">Defender</h1>
+<div class="text-center" id="defenderSpace"></div>
+<script src="assets/game.js"></script>
+</div>
+</body>
+</html>

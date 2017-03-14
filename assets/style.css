@@ -1,0 +1,49 @@
+body{
+    background-image: url(img/background.jpg);
+}
+#trueno{
+    background: white;
+    border: orange;
+    border-style: solid;
+    border-width: 5px;
+}
+#rxfd{
+    background: white;
+    border: orange;
+    border-style: solid;
+    border-width: 5px;
+}
+#civic{
+    background: white;
+    border: orange;
+    border-style: solid;
+    border-width: 5px;
+}
+#rx7{
+    background: white;
+    border: orange;
+    border-style: solid;
+    border-width: 5px;
+}
+h2{
+    color: white;
+}
+h1{
+    color: white;
+}
+h3{
+    color: white;
+}
+h4{
+    color: white;
+}
+#wrapper{
+    margin-top: 0;
+    background-color: rgba(105, 105, 105, 0.8);
+}
+#carName , .carHP{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
