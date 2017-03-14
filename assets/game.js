@@ -25,7 +25,7 @@ var enemyLives = 3
                 window.selectedCar = {HP: 100, Atk: 3}
                 var t = document.getElementById('truenoHP');
                 t.className += ' selCar';
-                $('#trueno').off();
+                $('#trueno').prop('onclick',null);
                 }
         }
     }
@@ -49,7 +49,7 @@ var enemyLives = 3
                 window.selectedCar = {HP: 125, Atk: 10}
                 var c = document.getElementById('civHP');
                 c.className += ' selCar';
-                $('#civic').off();
+                $('#civic').prop('onclick',null);
                 }
          }
     }
@@ -72,7 +72,7 @@ var enemyLives = 3
                 window.selectedCar = {HP: 180, Atk: 30}
                 var fd = document.getElementById('RXFDHP');
                 fd.className += ' selCar';
-                $('#rxfd').off();
+                $('#rxfd').prop('onclick',null);
                 }
         }
     }
@@ -93,7 +93,7 @@ var enemyLives = 3
                 window.selectedCar = {HP: 150, Atk: 20}
                 var rx7 = document.getElementById('rx7HP');
                 rx7.className += ' selCar';
-                $('#rx7').off();
+                $('#rx7').prop('onclick',null);
                 }       
         }
     }
@@ -110,7 +110,6 @@ var enemyLives = 3
                 var d = document.getElementById('civic');
                 c.className += ' defCar';
                 d.className += ' defCarName';
-                $('#fight').on();
          }
     },
         selectEnemyRXFD : function(){
@@ -125,7 +124,6 @@ var enemyLives = 3
                 var d = document.getElementById('rxfd');
                 fd.className += ' defCar';
                 d.className += ' defCarName';
-                $('#fight').on();
          }
     },
         selectEnemyRX7 : function(){
@@ -140,7 +138,6 @@ var enemyLives = 3
                 var rx7 = document.getElementById('rx7');
                 rx.className += ' defCar';
                 rx7.className += ' defCarName';
-                $('#fight').on();
 
          }
     },
@@ -156,11 +153,10 @@ var enemyLives = 3
                 var c = document.getElementById('trueno');
                 t.className += ' defCar';
                 c.className += ' defCarName';
-                $('#fight').on();
          }        
     }
 }
-$('#fight').click(function() {
+ $('#fight').click(function() {
     defendingCar.HP = defendingCar.HP-selectedCar.Atk;
     $('.defCar').html(defendingCar.HP);
     selectedCar.Atk = Math.round(selectedCar.Atk*2.25);
@@ -168,28 +164,28 @@ $('#fight').click(function() {
     $('#counter').html( 'Drifts and Counters For ' + defendingCar.counterHit + ' Damage!');
     selectedCar.HP = selectedCar.HP-defendingCar.counterHit;
     $('.selCar').html(selectedCar.HP);
-    if (defendingCar.HP < 0){
+    if (defendingCar.HP <= 0){
         $('.defCarName').remove();
         $('#counter').html('You have defeated an enemy!'); 
-        $('#fight').off();
     $('#trueno').click(defenderCar.selectEnemyTrueno);
     $('#rx7').click(defenderCar.selectEnemyRX7);
     $('#rxfd').click(defenderCar.selectEnemyRXFD);
     $('#civic').click(defenderCar.selectEnemyCivic);
     enemyLives--;
-    if (enemyLives <=0){
+    console.log(enemyLives);
+    console.log(defendingCar.HP);
+   }if (enemyLives <=0){
          $('#counter').html("Victory! You're king of the Mountain!");
     }
-}
+
     if (selectedCar.HP <= 0){
     $('#counter').html('You Have Died!');
-    $('#trueno').off();
-    $('#rx7').off();
-    $('#rxfd').off();
-    $('#civic').off();
-    $('#fight').off();
+    $('#trueno').prop('onclick',null);
+    $('#rx7').prop('onclick',null);
+    $('#rxfd').prop('onclick',null);
+    $('#civic').prop('onclick',null);
+    $('#fight').prop('onclick',null);
     $('#fight').after('<div class="col-lg-12 text-center"><button  class="col-lg-2-offset-6 center" id="reset" name="reset" type="button">Reset</button></div>');
-    //$('#reset').click(window.location.reload());
-    }
+    $('#reset').click(function(){location.reload()});
+}
  });
-
