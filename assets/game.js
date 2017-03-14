@@ -4,6 +4,11 @@ $('#rx7').click(rx7.selectRX7);
 $('#rxfd').click(rx7fd.selectRX7FD);
 $('#civic').click(civic.selectCivic);
 }
+var carAtk = new Audio('assets/sound/ATK.mp3');
+var backgroundMusic = new Audio('assets/sound/background.mp3');
+var gameOver = new Audio('assets/sound/dead.mp3');
+backgroundMusic.play();
+backgroundMusic.volume = 0.1;
 var enemyLives = 3
     var trueno = {
         HP : 100,
@@ -164,6 +169,7 @@ var enemyLives = 3
     $('#counter').html( 'Drifts and Counters For ' + defendingCar.counterHit + ' Damage!');
     selectedCar.HP = selectedCar.HP-defendingCar.counterHit;
     $('.selCar').html(selectedCar.HP);
+    carAtk.play();
     if (defendingCar.HP <= 0){
         $('.defCarName').remove();
         $('#counter').html('You have defeated an enemy!'); 
@@ -187,5 +193,6 @@ var enemyLives = 3
     $('#fight').prop('onclick',null);
     $('#fight').after('<div class="col-lg-12 text-center"><button  class="col-lg-2-offset-6 center" id="reset" name="reset" type="button">Reset</button></div>');
     $('#reset').click(function(){location.reload()});
+    gameOver.play();
 }
  });
